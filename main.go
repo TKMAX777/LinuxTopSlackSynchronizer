@@ -12,7 +12,7 @@ import (
 func main() {
 	n, err := strconv.Atoi(os.Getenv("PROCESS_NUMBER"))
 	if err != nil {
-		panic(err)
+		n = 20
 	}
 
 	var Slack = NewSlackHandler(os.Getenv("SLACK_TOKEN"), n)
