@@ -22,7 +22,7 @@ func main() {
 	var AlertMode = os.Getenv("SLACK_ALERT_MODE") == "on"
 	AlertLevel, _ := strconv.Atoi(os.Getenv("SLACK_ALERT_LEVEL"))
 
-	SlackSendInterval, _ := strconv.Atoi(os.Getenv("SLACK_ALERT_LEVEL"))
+	SlackSendInterval, _ := strconv.Atoi(os.Getenv("SLACK_SEND_INTERVAL"))
 	if SlackSendInterval == 0 {
 		SlackSendInterval = 1
 	}
