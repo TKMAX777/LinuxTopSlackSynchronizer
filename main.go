@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/TKMAX777/topSlack/top"
+	"github.com/TKMAX777/LinuxTopSlackSynchronizer/top"
 )
 
 func main() {

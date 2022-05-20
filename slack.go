@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
+	"github.com/TKMAX777/LinuxTopSlackSynchronizer/slack_webhook"
+	"github.com/TKMAX777/LinuxTopSlackSynchronizer/top"
 	"github.com/pkg/errors"
 
-	"github.com/TKMAX777/topSlack/slack_webhook"
-	"github.com/TKMAX777/topSlack/top"
 	"github.com/jedib0t/go-pretty/table"
 	"github.com/jedib0t/go-pretty/text"
 )

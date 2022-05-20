@@ -1,4 +1,4 @@
-module github.com/TKMAX777/topSlack
+module github.com/TKMAX777/LinuxTopSlackSynchronizer
 
 go 1.18
 
