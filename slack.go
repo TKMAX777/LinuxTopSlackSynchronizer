@@ -116,7 +116,7 @@ func (h SlackHandler) buildBlocks(ps []top.Process) []slack_webhook.BlockBase {
 	t.SetAutoIndex(true)
 
 	for i, p := range ps {
-		if i >= 10 {
+		if i >= h.processNumber {
 			break
 		}
 
