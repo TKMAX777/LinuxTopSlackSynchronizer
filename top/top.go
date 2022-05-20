@@ -23,7 +23,7 @@ type Process struct {
 	Command string
 }
 
-var commandRegexp = regexp.MustCompile(`\s*(\d+)\s+(\S+)\s+(\d+)\s+(\d+)\s+(\S+)\s+(\S+)\s+(\d+)\s+(\S+)\s+(\d+\.*\d*)\s+(\d+\.*\d*)\s+(\d+:\d+\.\d+)\s+(\S+)\s+`)
+var commandRegexp = regexp.MustCompile(`\s*(\d+)\s+(\S+)\s+(\d+)\s+(\d+)\s+(\S+)\s+(\S+)\s+(\d+)\s+(\S+)\s+(\d+\.*\d*)\s+(\d+\.*\d*)\s+(\d+:\d+\.\d+)\s+(.+)\s+`)
 
 func Get() ([]Process, error) {
 	cmd := exec.Command("/usr/bin/top", "-bn", "1")
