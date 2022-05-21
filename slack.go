@@ -128,7 +128,6 @@ func (h SlackHandler) buildBlocks(ps []top.Process) []slack_webhook.BlockBase {
 		}
 
 		t.AppendRow(table.Row{p.CPU, p.Memory, p.User, p.Command, CPUbar})
-		fmt.Println(p.Command)
 	}
 
 	t.SetStyle(table.StyleLight)

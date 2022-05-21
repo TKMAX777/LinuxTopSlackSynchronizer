@@ -1,7 +1,6 @@
 package top
 
 import (
-	"fmt"
 	"os/exec"
 	"regexp"
 	"strconv"
@@ -33,8 +32,6 @@ func Get() ([]Process, error) {
 	if err != nil {
 		return nil, errors.Wrap(err, "Output")
 	}
-
-	fmt.Printf("%s\n", output)
 
 	var processes = []Process{}
 
