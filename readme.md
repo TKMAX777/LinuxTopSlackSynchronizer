@@ -24,3 +24,13 @@ SLACK_ALERT_MODE='on / off'
 SLACK_ALERT_LEVEL='CPU utilization when sending Alert'
 SLACK_SEND_INTERVAL='Interval for updating Slack messages [second]'
 ```
+
+### Slack Scopes
+
+```
+channels:history 
+channels:read
+
+chat:write
+chat:write.customize
+```
