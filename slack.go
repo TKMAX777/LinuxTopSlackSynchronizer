@@ -101,16 +101,17 @@ func (h SlackHandler) buildBlocks(ps []top.Process) []slack_webhook.BlockBase {
 	t.AppendHeader(table.Row{"CPU", "MEMORY", "USER", "COMMAND", "CPU BAR"})
 	t.SetColumnConfigs([]table.ColumnConfig{
 		{
-			Name:   "CPU BAR",
-			VAlign: text.VAlignBottom,
+			Name:  "CPU BAR",
+			Align: text.AlignLeft,
 		},
 		{
-			Name:   "COMMAND",
-			VAlign: text.VAlignBottom,
+			Name:     "COMMAND",
+			Align:    text.AlignLeft,
+			WidthMax: 30,
 		},
 		{
-			Name:   "USER",
-			VAlign: text.VAlignBottom,
+			Name:  "USER",
+			Align: text.AlignLeft,
 		},
 	})
 	t.SetAutoIndex(true)
@@ -127,6 +128,7 @@ func (h SlackHandler) buildBlocks(ps []top.Process) []slack_webhook.BlockBase {
 		}
 
 		t.AppendRow(table.Row{p.CPU, p.Memory, p.User, p.Command, CPUbar})
+		fmt.Println(p.Command)
 	}
 
 	t.SetStyle(table.StyleLight)

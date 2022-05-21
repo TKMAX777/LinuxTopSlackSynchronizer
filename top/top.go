@@ -1,6 +1,7 @@
 package top
 
 import (
+	"fmt"
 	"os/exec"
 	"regexp"
 	"strconv"
@@ -26,12 +27,14 @@ type Process struct {
 var commandRegexp = regexp.MustCompile(`\s*(\d+)\s+(\S+)\s+(\d+)\s+(\d+)\s+(\S+)\s+(\S+)\s+(\d+)\s+(\S+)\s+(\d+\.*\d*)\s+(\d+\.*\d*)\s+(\d+:\d+\.\d+)\s+(.+)\s+`)
 
 func Get() ([]Process, error) {
-	cmd := exec.Command("/usr/bin/top", "-bn", "1")
+	cmd := exec.Command("/usr/bin/top", "-bcn", "1", "-w")
 
 	output, err := cmd.Output()
 	if err != nil {
 		return nil, errors.Wrap(err, "Output")
 	}
+
+	fmt.Printf("%s\n", output)
 
 	var processes = []Process{}
 

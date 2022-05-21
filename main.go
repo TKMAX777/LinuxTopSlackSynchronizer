@@ -42,13 +42,15 @@ func main() {
 			log.Println("Error: RegularSend: ", err)
 		}
 
-		var cpu float32
-		for _, p := range ps {
-			cpu += p.CPU
-		}
+		if AlertMode {
+			var cpu float32
+			for _, p := range ps {
+				cpu += p.CPU
+			}
 
-		if AlertMode && cpu > float32(AlertLevel) {
-			Slack.Send(ps, AlertChannel)
+			if cpu > float32(AlertLevel) {
+				Slack.Send(ps, AlertChannel)
+			}
 		}
 
 		time.Sleep(time.Second * time.Duration(SlackSendInterval))
